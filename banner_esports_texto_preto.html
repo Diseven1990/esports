@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+  <meta charset="UTF-8">
+  <title>eSports Banner Completo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Open Sans', sans-serif;
+      overflow-x: hidden;
+      background: transparent;
+      color: #000000;
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: none;
+    }
+
+    .secao-completa {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    p {
+  text-align: justify;
+      margin-bottom: 1em;
+      font-size: 1.05em;
+      line-height: 1.6em;
+    }
+
+    .banner {
+      background: rgba(18, 18, 18, 0.9);
+      border: 3px solid #00ffcc;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 0 25px #00ffccaa, 0 0 40px #00ffaa22 inset;
+      text-align: center;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      position: relative;
+      
+      margin: 40px 0 20px 0;
+    }
+
+    .pergunta {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #00ffcc, #00ffaa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      animation: pulseGlow 2s infinite;
+    }
+
+    .pergunta::before,
+    .pergunta::after {
+      content: "🎮";
+      font-size: 1.2em;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        text-shadow: 0 0 8px #00ffaa;
+      }
+      50% {
+        text-shadow: 0 0 20px #00ffaa;
+      }
+    }
+
+    .resposta {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.8s ease, opacity 0.8s ease;
+      margin-top: 0;
+      font-size: 1.05em;
+      color: #aaffee;
+      text-align: justify;
+    }
+
+    .banner:hover .resposta,
+    .banner.ativo .resposta {
+      max-height: 600px;
+      opacity: 1;
+      margin-top: 20px;
+    }
+
+    .botao-toggle {
+      display: inline-block;
+      background: linear-gradient(90deg, #00ffcc, #00ffaa);
+      color: #000;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 20px;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .botao-toggle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #00ffaa;
+      opacity: 0.9;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .texto-abaixo {
+      transition: margin-top 0.4s ease;
+      margin-top: 20px;
+    }
+
+    .banner:hover + .texto-abaixo {
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="bg-video" autoplay muted loop>
+    <source src="https://www.videvo.net/videvo_files/converted/2016_11/preview/161006_C_127.mp445210.webm" type="video/webm">
+    O teu browser não suporta vídeo em background.
+  </video>
+
+  <div class="secao-completa">
+    <p>É apaixonado pelo universo desportivo e não se imagina a seguir outro caminho profissional? Neste curso irá explorar metodologias, técnicas e abordagens de marketing e comunicação especificamente adaptadas ao setor do desporto, com uma componente dedicada ao fenómeno em expansão dos <strong>eSports</strong>.</p>
+
+    <div class="banner" id="banner">
+      <div class="pergunta">O que são os eSports?</div>
+      <div class="resposta" id="resposta">
+        Os eSports (desportos eletrónicos) são competições organizadas de videojogos que envolvem jogadores amadores e profissionais de todo o mundo. Estes eventos são muitas vezes transmitidos ao vivo para milhões de fãs e disputados em arenas lotadas, com prémios que podem ultrapassar os milhões de euros.<br><br>
+        Tal como nos desportos tradicionais, os eSports têm regras, treinadores, equipas, patrocinadores e até ligas e campeonatos internacionais. Jogos como League of Legends, Counter-Strike e Fortnite são alguns dos títulos mais populares nestas competições.
+      </div>
+      <button class="botao-toggle" onclick="toggleResposta()">Ver mais</button>
+    </div>
+
+    <div class="texto-abaixo" id="textoAbaixo">
+      <p>Num mercado cada vez mais competitivo e digital, o marketing assume um papel essencial na construção de valor dentro da indústria desportiva. A evolução tecnológica e o crescimento dos desportos eletrónicos vieram transformar a forma como os clubes, as marcas e os eventos se posicionam, comunicam e se ligam aos seus públicos.</p>
+
+      <div style="text-align: center; margin: 40px 0;">
+  <img src="imagem.jpg" alt="Imagem ilustrativa" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 12px #00ffaa;">
+</div>
+
+<p>O marketing desportivo, aliado à dinâmica dos eSports, surge assim como um campo estratégico que exige criatividade, planeamento e domínio de ferramentas digitais para captar a atenção de fãs, patrocinadores e comunidades online cada vez mais exigentes e participativas.</p>
+
+      <p>Trata-se de uma área em constante desenvolvimento, onde os princípios do marketing se fundem com a paixão e a emoção que o desporto (físico ou virtual) desperta. Independentemente da função que ambiciona desempenhar no ecossistema desportivo, o domínio de competências em marketing especializado é uma vantagem clara, tanto para quem pretende entrar neste setor vibrante, como para profissionais que desejam diversificar e consolidar a sua carreira.</p>
+
+      <p>Ao longo da formação, serão abordadas estratégias de comunicação, ativação de patrocínios, gestão de eventos, tanto no desporto tradicional como no contexto dos eSports. Existirá também a oportunidade de explorar abordagens criativas orientadas para resultados, para reforçar a visibilidade, o impacto e a sustentabilidade de entidades desportivas, equipas de eSports e eventos híbridos.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleResposta() {
+      const banner = document.getElementById("banner");
+      banner.classList.toggle("ativo");
+    }
+  </script>
+
+</body>
+</html>
